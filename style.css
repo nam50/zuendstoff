@@ -48,14 +48,12 @@ body::before {
 header {
     padding: 2.5rem 1.5rem 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    width: 100%;
 }
 
 .header-actions {
-    position: absolute;
-    right: 1.5rem;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -112,7 +110,7 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 5vw, 2rem);
     font-weight: 600;
     letter-spacing: 2px;
     background: linear-gradient(135deg, #fff, #8a8a93);
@@ -150,8 +148,9 @@ header {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     cursor: grab;
-    will-change: transform;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     user-select: none;
 }
 
